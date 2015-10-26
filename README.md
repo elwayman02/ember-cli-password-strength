@@ -1,4 +1,4 @@
-# Ember-password-strength
+# Ember-CLI-Password-Strength
 
 This README outlines the details of collaborating on this Ember addon.
 

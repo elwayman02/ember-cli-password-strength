@@ -1,5 +1,5 @@
 {
-  "name": "ember-password-strength",
+  "name": "ember-cli-password-strength",
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
@@ -11,12 +11,15 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/elwayman02/ember-cli-password-strength",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Jordan Hawker <hawker.jordan@gmail.com> (http://www.JordanHawker.com)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elwayman02/ember-cli-password-strength/issues"
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
     "ember-ajax": "0.6.3",

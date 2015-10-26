@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-password-strength',
+  name: 'ember-cli-password-strength',
 
   included: function (app) {
     this._super.included.apply(this, arguments);
