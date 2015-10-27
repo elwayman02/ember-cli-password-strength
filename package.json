@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-password-strength",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember-CLI wrapper for password-strength checking via https://github.com/dropbox/zxcvbn",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -21,8 +21,6 @@
     "url": "https://github.com/elwayman02/ember-cli-password-strength/issues"
   },
   "devDependencies": {
-    "broccoli-asset-rev": "^2.2.0",
-    "ember-ajax": "0.6.3",
     "ember-cli": "ember-cli/ember-cli#master",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-content-security-policy": "0.4.0",
@@ -32,9 +30,7 @@
     "ember-cli-inject-live-reload": "^1.3.1",
     "ember-cli-qunit": "^1.0.3",
     "ember-cli-release": "0.2.8",
-    "ember-cli-sri": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "2.1.0",
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",

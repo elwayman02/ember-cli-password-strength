@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import strength from 'password-strength';
 
-const { Controller, computed } = Ember;
+const { Component, computed } = Ember;
 
-export default Controller.extend({
+export default Component.extend({
   password: '',
 
   strength: computed('password', function () {
