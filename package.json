@@ -40,7 +40,9 @@
     "rsvp": "^3.1.0"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "password",
+    "zxcvbn"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5"
