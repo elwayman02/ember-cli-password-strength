@@ -4,6 +4,6 @@ module.exports = {
   },
 
   afterInstall: function () {
-    return this.addBowerPackageToProject('zxcvbn', '4.0.1');
+    return this.addBowerPackageToProject('zxcvbn', '4.1.1');
   }
 };
