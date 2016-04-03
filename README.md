@@ -9,6 +9,8 @@ This addon is an Ember-CLI wrapper for [zxcvbn](https://github.com/dropbox/zxcvb
 In addition to bringing that package into your project, Ember-CLI-Password-Strength exposes a `password-strength` shim 
 as an ES6 module you can import anywhere in your application, rather than using the Bower package's global variable.
 
+Check out the [Demo](http://jhawk.co/e-c-password-strength-demo)!
+
 ## Installation
 
 `ember install ember-cli-password-strength`
