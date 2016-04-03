@@ -3,7 +3,7 @@
   "dependencies": {
     "ember": "~2.4.3",
     "ember-cli-shims": "0.1.1",
-    "zxcvbn": "~4.0.1"
+    "zxcvbn": "~4.3.0"
   },
   "devDependencies": {
     "ember-cli-test-loader": "0.2.2",
