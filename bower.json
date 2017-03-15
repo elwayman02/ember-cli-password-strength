@@ -1,8 +1,6 @@
 {
   "name": "ember-cli-password-strength",
-  "dependencies": {
-    "zxcvbn": "~4.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "ember-qunit-notifications": "0.1.0"
   }
