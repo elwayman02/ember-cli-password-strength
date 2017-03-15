@@ -1,8 +1,6 @@
 {
   "name": "ember-cli-password-strength",
   "dependencies": {
-    "ember": "~2.7.0",
-    "ember-cli-shims": "0.1.1",
     "zxcvbn": "~4.3.0"
   },
   "devDependencies": {
