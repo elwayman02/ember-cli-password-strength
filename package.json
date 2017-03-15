@@ -51,7 +51,10 @@
     "zxcvbn"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6"
+    "broccoli-funnel": "^1.1.0",
+    "broccoli-merge-trees": "^2.0.0",
+    "ember-cli-babel": "^5.1.6",
+    "zxcvbn": "^4.3.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
