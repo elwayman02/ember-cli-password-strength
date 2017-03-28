@@ -1,3 +1,4 @@
 {
-  "name": "ember-cli-password-strength"
+  "name": "ember-cli-password-strength",
+  "dependencies": {}
 }
