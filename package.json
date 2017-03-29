@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-password-strength",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ember-CLI wrapper for password-strength checking via https://github.com/dropbox/zxcvbn",
   "keywords": [
     "ember-addon",
