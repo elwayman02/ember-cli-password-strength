@@ -20,7 +20,7 @@ module.exports = {
 
   treeForVendor(vendorTree) {
     var zxcvbnTree = new Funnel(path.dirname(require.resolve('zxcvbn/dist/zxcvbn.js')), {
-      files: ['zxcvbn.js'],
+      files: ['zxcvbn.js', 'zxcvbn.js.map'],
     });
 
     return new MergeTrees([vendorTree, zxcvbnTree]);
