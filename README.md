@@ -47,7 +47,6 @@ This README outlines the details of collaborating on this Ember addon.
 * `git clone git@github.com:elwayman02/ember-cli-password-strength.git`
 * `cd ember-cli-password-strength`
 * `npm install`
-* `bower install`
 
 ### Running
 
