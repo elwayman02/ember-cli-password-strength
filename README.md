@@ -16,9 +16,47 @@ Check out the [Demo](http://jhawk.co/e-c-password-strength-demo)!
 
 `ember install ember-cli-password-strength`
 
+## Configuration
+
+### Load the Zxcvbn Library Only When Needed
+
+Zxcvbn is a large library (400kB gzipped). You can load it asynchronously
+by configuring your `ember-cli-build.js`. This is the recommended configuration, but is not the default
+so as to maintain backwards compatibility:
+
+```javascript
+let app = new EmberAddon(defaults, {
+  'ember-cli-password-strength': {
+    bundleZxcvbn: false
+  }
+});
+```
+
 ## Usage
 
-Simply import the `password-strength` shim into your project:
+If you choose not to bundle Zxcvbn with your app then you must use the `async-password-strength` shim:
+
+```javascript
+//components/foo.js
+import Ember from 'ember';
+import strength from 'async-password-strength';
+
+const { Component, computed } = Ember;
+
+export default Component.extend({
+  password: '',
+
+  strength: computed('password', function () {
+    strength(this.get('password')).then(results => {
+      console.log(results);
+    });
+  })
+});
+```
+
+
+If you don't mind paying the upfront cost of loading the library you can set `bundleZxcvbn` to true and use the 
+synchronous version of the shim by importing the `password-strength`:
 
 ```javascript
 //components/foo.js
