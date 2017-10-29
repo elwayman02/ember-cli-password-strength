@@ -1,12 +1,17 @@
 import Ember from 'ember';
-import strength from 'password-strength';
 
-const { Component, computed } = Ember;
+const { Component, computed, inject, ObjectProxy, PromiseProxyMixin } = Ember;
+
+const ObjectPromiseProxy = ObjectProxy.extend(PromiseProxyMixin);
 
 export default Component.extend({
+  passwordStrength: inject.service(),
   password: '',
 
   strength: computed('password', function () {
-    return strength(this.get('password'));
+    const passwordStrength = this.get('passwordStrength');
+    return ObjectPromiseProxy.create({
+      promise: passwordStrength.strength(this.get('password'))
+    });
   })
 });
