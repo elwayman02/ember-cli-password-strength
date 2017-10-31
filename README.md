@@ -65,6 +65,16 @@ export default Component.extend({
     const passwordStrength = this.get('passwordStrength');
     const obj = passwordStrength.strength(this.get('password');
     console.log(obj);
+  }),
+
+  /**
+   * If you are using the result in a template then strengthProxy saves 
+   * a step in wrapping the returned promise in an Ember.ObjectProxy
+   */
+  strengthProxy: computed('password', function () {
+    const passwordStrength = this.get('passwordStrength');
+    const obj = passwordStrength.strength(this.get('password');
+    console.log(obj);
   })
 });
 ```

@@ -1,6 +1,8 @@
 import Service from '@ember/service';
 import { Promise } from 'rsvp';
 import { getOwner } from '@ember/application';
+import ObjectProxy from '@ember/object/proxy';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 
 export default Service.extend({
   loadingPromise: null,
@@ -34,6 +36,14 @@ export default Service.extend({
 
     return loadingPromise;
   },
+
+  /**
+   * Load zxcvbn and then calculate strength
+   * @param {String} password
+   * @param {Array} user_inputs
+   *
+   * @returns {Promise}
+   */
   strength(password, user_inputs = []) {
     return new Promise(resolve => {
       this.load().then(() => {
@@ -41,10 +51,32 @@ export default Service.extend({
       });
     });
   },
+
+  /**
+   * Use a previously loaded zxcvbn to calculate strength
+   * @param {String} password
+   * @param {Array} user_inputs
+   *
+   * @returns {Object}
+   */
   strengthSync(password, user_inputs = []) {
     if (!('zxcvbn' in window)) {
       throw new Error('`strengthSync` called before `load` was finished.');
     }
     return window['zxcvbn'](password, user_inputs)
-  }
+  },
+
+  /**
+   * Load zxcvbn and then calculate strength
+   * Return a ObjectProxy Promise which is suitable for use in a template
+   * @param {String} password
+   * @param {Array} user_inputs
+   *
+   * @returns {ObjectPromiseProxy}
+   */
+  strengthProxy(password, user_inputs = []) {
+    const ObjectPromiseProxy = ObjectProxy.extend(PromiseProxyMixin);
+    const promise = this.strength(password, user_inputs);
+    return ObjectPromiseProxy.create({ promise });
+  },
 });
