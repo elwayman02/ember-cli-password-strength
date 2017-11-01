@@ -16,7 +16,86 @@ Check out the [Demo](http://jhawk.co/e-c-password-strength-demo)!
 
 `ember install ember-cli-password-strength`
 
+## Configuration
+
+### Load the Zxcvbn Library Only When Needed
+
+Zxcvbn is a large library (400kB gzipped). You can load it asynchronously
+by configuring your `ember-cli-build.js`. This is the recommended configuration, but is not the default
+so as to maintain backwards compatibility:
+
+```javascript
+let app = new EmberAddon(defaults, {
+  'ember-cli-password-strength': {
+    bundleZxcvbn: false
+  }
+});
+```
+
 ## Usage
+
+### Use the `passwordStrength` service:
+
+```javascript
+//components/foo.js
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { inject } from '@ember/service';
+
+export default Component.extend({
+  passwordStrength: inject(),
+  password: '',
+
+  /**
+   * passwordStrength.strength returns a promise which
+   * will resolve after the zxcvbn library has been loaded.
+   *
+   */
+  strength: computed('password', function () {
+    const passwordStrength = this.get('passwordStrength');
+    passwordStrength.strength(this.get('password')).then(obj => {
+      console.log(obj);
+    });
+  }),
+
+  /**
+   * strengthSync expects zxcvbn to be loaded already
+   */
+  strengthSync: computed('password', function () {
+    const passwordStrength = this.get('passwordStrength');
+    const obj = passwordStrength.strength(this.get('password');
+    console.log(obj);
+  }),
+
+  /**
+   * If you are using the result in a template then strengthProxy saves 
+   * a step in wrapping the returned promise in an Ember.ObjectProxy
+   */
+  strengthProxy: computed('password', function () {
+    const passwordStrength = this.get('passwordStrength');
+    const obj = passwordStrength.strength(this.get('password');
+    console.log(obj);
+  })
+});
+```
+
+### Preload the zxcvbn library to make the first run of strength() faster:
+
+```javascript
+//routes/foo.js
+import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
+
+export default Route.extend({
+  passwordStrength: inject(),
+  beforeModel() {
+    const passwordStrength = this.get('passwordStrength');
+    return passwordStrength.load();
+  }
+});
+```
+
+### Import the shim (deprecated):
 
 Simply import the `password-strength` shim into your project:
 

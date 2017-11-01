@@ -1,12 +1,11 @@
 import Ember from 'ember';
-import strength from 'password-strength';
-
-const { Controller, computed } = Ember;
+const { Controller, computed, inject } = Ember;
 
 export default Controller.extend({
+  passwordStrength: inject.service(),
   password: '',
 
   strength: computed('password', function () {
-    return strength(this.get('password'));
+    return this.get('passwordStrength').strength(this.get('password'));
   })
 });
