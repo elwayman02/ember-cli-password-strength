@@ -56,6 +56,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://jhawk.co/e-c-password-strength-demo"
+    "demoURL": "http://jhawk.co/password-strength-demo"
   }
 }
