@@ -1,4 +1,5 @@
-# Ember-CLI-Password-Strength
+Ember-CLI-Password-Strength
+==============================================================================
 
 [![Build Status](https://travis-ci.org/elwayman02/ember-cli-password-strength.svg)](https://travis-ci.org/elwayman02/ember-cli-password-strength)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-cli-password-strength.svg)](https://emberobserver.com/addons/ember-cli-password-strength)
@@ -12,9 +13,12 @@ as an ES6 module you can import anywhere in your application, rather than using 
 
 Check out the [Demo](http://jhawk.co/e-c-password-strength-demo)!
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
-`ember install ember-cli-password-strength`
+```
+ember install ember-cli-password-strength
+```
 
 ## Configuration
 
@@ -32,7 +36,8 @@ let app = new EmberAddon(defaults, {
 });
 ```
 
-## Usage
+Usage
+------------------------------------------------------------------------------
 
 ### Use the `passwordStrength` service:
 
@@ -117,9 +122,8 @@ export default Component.extend({
 
 Full documentation for the strength checking method can be found [here](https://github.com/dropbox/zxcvbn#usage).
 
-## Contributing
-
-This README outlines the details of collaborating on this Ember addon.
+Contributing
+------------------------------------------------------------------------------
 
 ### Installation
 
@@ -127,19 +131,25 @@ This README outlines the details of collaborating on this Ember addon.
 * `cd ember-cli-password-strength`
 * `npm install`
 
-### Running
+### Linting
+
+* `yarn run lint:js`
+* `yarn run lint:js -- --fix`
+
+### Running tests
+
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `yarn test` – Runs `ember try:each` to test your addon against multiple Ember versions
+
+### Running the dummy application
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
