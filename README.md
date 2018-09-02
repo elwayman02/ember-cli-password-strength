@@ -63,7 +63,7 @@ export default Component.extend({
    */
   strengthSync: computed('password', function () {
     const passwordStrength = this.get('passwordStrength');
-    const obj = passwordStrength.strength(this.get('password');
+    const obj = passwordStrength.strengthSync(this.get('password'));
     console.log(obj);
   }),
 
@@ -73,7 +73,7 @@ export default Component.extend({
    */
   strengthProxy: computed('password', function () {
     const passwordStrength = this.get('passwordStrength');
-    const obj = passwordStrength.strength(this.get('password');
+    const obj = passwordStrength.strengthProxy(this.get('password'));
     console.log(obj);
   })
 });
