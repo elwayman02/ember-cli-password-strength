@@ -6,6 +6,25 @@
 [![Code Climate](https://codeclimate.com/github/elwayman02/ember-cli-password-strength/badges/gpa.svg)](https://codeclimate.com/github/elwayman02/ember-cli-password-strength)
 [![Codacy Badge](https://api.codacy.com/project/badge/d7d7c6a87e55428888cae7978849c74a)](https://www.codacy.com/app/hawker-jordan/ember-cli-password-strength)
 
+# This is probably no longer necessary for your application
+
+[ember-auto-import](https://github.com/ef4/ember-auto-import) now provides the ability to import 
+from NPM without requiring this addon for `ember-cli` versions as far back as `v2.18`.  By installing `ember-auto-import` you can replace this addon and get 
+automatic lazy loading and access to `zxcvbn`.
+
+`yarn add ember-auto-import zxcvbn`
+
+Then in your component:
+```
+passwordStrengthScore: computed('password', async function () {
+    const { default: zxcvbn } = await import('zxcvbn');
+    const obj = zxcvbn(this.password);
+    return obj.score;
+}),
+```
+
+# Documentation
+
 This addon is an Ember-CLI wrapper for [zxcvbn](https://github.com/dropbox/zxcvbn), a "realistic password strength estimator".
 In addition to bringing that package into your project, Ember-CLI-Password-Strength exposes a `password-strength` shim 
 as an ES6 module you can import anywhere in your application, rather than using the Bower package's global variable.
